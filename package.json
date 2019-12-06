@@ -1,0 +1,19 @@
+{
+  "name": "get-a-clue-game",
+  "version": "1.0.0",
+  "description": "Get A Clue -- a murder mystery based on vanilla Javascript, HTML and CSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RebeccaEvans/get-a-clue-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RebeccaEvans/get-a-clue-game/issues"
+  },
+  "homepage": "https://github.com/RebeccaEvans/get-a-clue-game#readme"
+}
