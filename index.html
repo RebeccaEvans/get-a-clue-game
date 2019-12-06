@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Clue Game</title>
+</head>
+<body>
+
+		<div class="header">
+			<p id='clue-game'>GET A CLUE</p>
+			<p id='typewriter'>- a game of murder and mystery -</p>
+		</div>
+		<div class="clues-container">
+			<div id="title-weapons">WEAPONS</div>
+			<div id="title-suspects">SUSPECTS</div>
+			<div class="weapons-wrapper">
+				<div class='weapons' id= 'dagger' draggable="true"><p>DAGGER</p></div>
+				<div class='weapons' id="candlestick" draggable="true"><p>CANDLESTICK</p></div>
+				<div class='weapons' id="lead_pipe" draggable="true"><p>PIPE</p></div>
+				<div class='weapons' id="revolver" draggable="true"><p>REVOLVER</p></div>
+				<div class='weapons' id="rope" draggable="true"><p>ROPE</p></div>
+				<div class='weapons' id="wrench" draggable="true"><p>WRENCH</p></div>
+			</div>
+
+			<div class="suspects-wrapper">
+				<div class='suspects'id="mustard" draggable="true" ><p>COL. MUSTARD</p></div>
+				<div class='suspects'id="green" draggable="true"><p>MR. GREEN</p></div>
+				<div class='suspects'id="peacock" draggable="true"><p>MRS. PEACOCK</p></div>
+				<div class='suspects'id="scarlett" draggable="true"><p>MISS SCARLETT</p></div>
+				<div class='suspects'id="white" draggable="true"><p>MRS. WHITE</p></div>
+				<div class='suspects'id="plum" draggable='true'><p>PROF. PLUM</p></div>
+			</div>
+
+		</div>
+		<div id="kitchen" class="room">
+			<p>KITCHEN</p>
+		</div>
+		<div id="ballroom" class="room">
+			<p>BALLROOM</p>
+		</div>
+		<div id="conservatory" class="room">
+			<p>CONSERVATORY</p>
+		</div>
+		<div id="dining" class="room">
+			<p>DINING</p>
+		</div>
+		
+		<div id="confidential" class="envelope"><p>MR. BODDY</p></div>
+
+		<div id="billiards" class="room">
+			<p>BILLIARD ROOM</p>
+		</div>	
+		<div id="library" class="room">
+			<p>LIBRARY</p>
+		</div>
+		<div id="lounge" class="room">
+			<p>LOUNGE</p>
+		</div>
+		<div id="hall" class="room">
+			<p>HALL</p>
+		</div>
+		<div id="study" class="room">
+			<p>STUDY</p>
+		</div>
+		<div class="player-space">
+			<div>
+				<p>WHO KILLED MR. BODDY?</p>
+				<p>You may make up to 10 suggestions. After each suggestion, the game will give you one clue to solve the myster of Mr. Boddy's murder. Keep track of the clues and solve the mystery before time runs out! </p>
+			</div>
+
+			<div id="counter">
+				<div>TRIES LEFT:</div>
+				<div id='countdown'>10</div>
+			</div>
+			<div class="suggestion">
+				<div id="suspect-guess"><div id='who'>suspect guess</div></div>
+				<div id="room-guess"><div id='where'>room guess</div></div>
+				<div id="weapon-guess"><div id='with'>weapon guess</div></div>
+			</div>
+			<div class="submit-suggestion">
+				<button id='submit' type='button'>CHECK SUGGESTION</button>
+			</div>
+		</div>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

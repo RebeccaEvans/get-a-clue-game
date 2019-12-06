@@ -1,0 +1,384 @@
+body {
+	display: grid;
+	grid-template-columns: 300px 300px 300px 600px;
+	grid-template-rows: 300px 100px 100px 198px 99px 99px 198px;
+	background-color: black;
+	color: white;
+	font-family: 'Acme', sans-serif;
+	margin-left: 100px;
+}
+
+ .header #typewriter {
+	max-width: 650px;
+	text-align: right;
+	overflow: hidden;
+	border-right: .15em solid orange;
+	white-space: nowrap;
+	margin: 0 auto;
+	animation:
+		typing 10s steps(40, end),
+		blink-caret .75s step-end 300;
+}
+
+@keyframes typing {
+	from {width: 0}
+	to {width: 100%}
+}
+@keyframes blink-caret {
+	from, to {border-color: transparent}
+	50% {border-color: orange}
+}
+
+.header {
+	grid-column: 1 / 5;
+	grid-row: 1 / 2;
+	text-align: center;
+	font-size: 50px;
+	display: flexbox;
+	justify-content: center;
+}
+
+.player-space {
+	border: solid 4px darkred;
+	border-radius: 8px;
+	margin: 5px;
+	padding: 5px 15px 5px 15px;
+	font-size: 22px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.clues-container {
+	grid-column: 1 / 5;
+	grid-row: 2 / 4;
+	justify-content: center;
+	display: grid;
+	grid-template-columns: 650px 650;
+	grid-template-rows: 20px 150px;
+}
+
+.weapons p {
+	visibility: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.suspects p {
+	visibility: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.room p {
+	visibility: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.envelope p {
+	visibility: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.weapons:hover, .suspects:hover {
+		transform: scale(2.5);
+}
+.room:hover {
+	transform: scale(1.5);
+}
+.weapons:hover p {
+	visibility: visible;
+}
+.suspects:hover p {
+	visibility: visible;
+}
+.room:hover p{
+	visibility: visible;
+}
+
+#confidential:hover {
+	transform: scale(1.5);
+	background-image: url('../img/mr_boddy3.jpg');
+	border: solid 4px white;
+	border-radius: 10px;
+}
+
+.envelope:hover p {
+	visibility: visible;
+}
+
+.weapons {
+	background-color: azure;
+	border: solid 5px red;
+	border-radius: 8px;
+	transition: transform 300ms;
+	margin: 15px;
+	height: 100px;
+	width: 75px;
+	font-size: 10px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.suspects {
+	transition: transform 300ms;
+	border-radius: 8px;
+	margin: 15px;
+	height: 100px;
+	width: 75px;
+	font-size: 10px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.room {
+	margin: 10px 10px 10px 10px;
+	transition: transform 300ms;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30px;
+}
+
+.envelope {
+	margin: 10px 10px 10px 10px;
+	transition: transform 300ms;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	border-radius: 8px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	font-size: 20px;
+}
+
+#dagger {
+	background-image: url(../img/weapons/dagger.png);
+}
+#candlestick {
+	background-image: url(../img/weapons/candlestick.png);
+}
+#lead_pipe {
+	background-image: url(../img/weapons/pipe.png);
+}
+#revolver {
+	background-image: url(../img/weapons/revolver.png);
+}
+#rope {
+	background-image: url(../img/weapons/rope.png);
+}
+#wrench {
+	background-image: url(../img/weapons/wrench.png);
+}
+#mustard {
+	border: solid 5px darkgoldenrod;
+	background-image: url(../img/suspects/colonol_mustard.png);
+}
+#green {
+	border: solid 5px green;
+	background-image: url(../img/suspects/mr_green.png);
+}
+#peacock {
+	border: solid 5px #5276d1;
+	background-image: url(../img/suspects/mrs_peacock.jpg);
+}
+#scarlett {
+	border: solid 5px #eb4d5d;
+	background-image: url(../img/suspects/ms_scarlett.png);
+}
+#white {
+	border: solid 5px white;
+	background-image: url(../img/suspects/ms_white.png);
+}
+#plum {
+	border: solid 5px purple;
+	background-image: url(../img/suspects/prof_plum.png);
+}
+
+#kitchen {
+	grid-column: 1 / 2;
+	grid-row: 4 / 5;
+	background-image: url('../img/rooms/kitchen.jpg');
+}
+
+#ballroom {
+	grid-column: 2 / 3;
+	grid-row: 4 / 5;
+	background-image: url('../img/rooms/ballroom2.jpg');
+}
+
+#conservatory {
+	grid-column: 3 / 4;
+	grid-row: 4 / 5;
+	background-image: url('../img/rooms/conservatory.png');
+}
+
+#dining {
+	grid-column: 1 / 2;
+	grid-row: 5 / 7;
+	background-image: url('../img/rooms/dining.jpeg');
+}
+
+#confidential {
+	grid-column: 2 / 3;
+	grid-row: 5 / 7;
+	background-image: url('../img/confidential\ envelope.png');
+}
+
+#mrBoddy {
+	display: none;
+	grid-column: 2 / 3;
+	grid-row: 5 / 7;
+	background-image: url('../img/mr_boddy3.jpg');
+}
+
+#billiards {
+	grid-column: 3 / 4;
+	grid-row: 5 / 6;
+	background-image: url('../img/rooms/billiards.jpg');
+}
+
+#library {
+	grid-column: 3 / 4;
+	grid-row: 6 / 7;
+	background-image: url('../img/rooms/library.jpg');
+}
+
+#lounge {
+	grid-column: 1 / 2;
+	grid-row: 7 / 8;
+	background-image: url('../img/rooms/lounge.jpg');
+}
+
+#hall {
+	grid-column: 2 / 3;
+	grid-row: 7 / 8;
+	background-image: url('../img/rooms/hall.jpg');
+}
+
+#study {
+	grid-column: 3 / 4;
+	grid-row: 7 / 8;
+	background-image: url('../img/rooms/study.jpg');
+}
+
+#title-weapons {
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+	font-size: 30px;
+	text-align: center;
+}
+#title-suspects {
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+	font-size: 30px;
+	text-align: center;
+}
+
+.weapons-wrapper{
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
+	display: flex;
+	margin: 15px;
+}
+
+.suspects-wrapper {
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+	display: flex;
+	margin: 15px;
+}
+
+.player-space {
+	grid-column: 4 / 5;
+	grid-row: 4 / 8;
+}
+
+#counter {
+	display:flex;
+	flex-direction: row;
+	border: solid 2px white;
+	border-radius: 10px;
+	width: 250px;
+	padding: 10px;
+	justify-content: center;
+	background-color: yellowgreen;
+	color: black;
+}
+
+#countdown {
+	margin: 0 0 0 20px
+}
+
+.suggestion {
+	display: flex;
+	flex-direction: row;
+	margin: 10px 0 0 0;
+}
+#room-guess {
+	border: solid 2px green;
+	width: 180px;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#suspect-guess {
+	border: solid 2px green;
+	width: 180px;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#weapon-guess {
+	border: solid 2px green;
+	width: 180px;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.submit-suggestion {
+	margin: 10px 0 0 0;
+}
+#submit {
+	font-size: 22px;
+	font-family: 'Acme', sans-serif;
+	color: black;
+	background-color: yellowgreen;
+	padding: 10px;
+	width: 300px;
+	border: solid 2px white;
+	border-radius: 10px;
+}
+
+#start-game {
+	font-size: 40px;
+	font-family: 'Acme', sans-serif;
+	color: black;
+	background-color: yellowgreen;
+	padding: 10px;
+	width: 500px;
+	border: solid 2px white;
+	border-radius: 10px;
+}
