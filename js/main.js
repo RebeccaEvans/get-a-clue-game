@@ -9,7 +9,7 @@ let weaponIndex = Math.floor(Math.random()*5)
 let who = ''
 let where = ''
 let withWhat = ''
-let triesLeft
+let triesLeft  = 10
 
 function handleClick() {
 	getMurderer()
@@ -22,10 +22,7 @@ function insertAfter(el, referenceNode) {
 
 typewriter.addEventListener('animationend', (e) => {
 	e.target.style.display = 'none'
-	var startButton = document.createElement('button')
-	startButton.innerText = 'PLAY GAME'
-	startButton.id = 'start-game'
-	insertAfter(startButton, parent)
+	var startButton = document.getElementById('start-game')
 	addStartListener(startButton)
 })
 
@@ -42,22 +39,23 @@ function getMurderer() {
 	where = roomList[roomIndex]
 	withWhat = weaponList[weaponIndex]
 	document.getElementById('start-game').removeEventListener('click', handleClick, true)
+	console.log (`${who} ${where} ${withWhat}`)
 	playGame()
 }
 
 
 function playGame () {
-	console.log(who)
-	console.log(where)
-	console.log(withWhat)
 	let chooseWeapons = document.querySelectorAll('.weapons')
 	let chooseSuspects = document.querySelectorAll('.suspects')
 	let chooseRooms = document.querySelectorAll('.room')
 	let suspectGuess = document.getElementById('who')
 	let suspectBox = document.getElementById('suspect-guess')
+	let roomGuess = document.getElementById('where')
+	let roomBox = document.getElementById('room-guess')
+	let weaponGuess = document.getElementById('with')
+	let weaponBox = document.getElementById('weapon-guess')
 
 	for (i=0; i<chooseSuspects.length; i++) {
-		console.log(chooseSuspects[i].id)
 		chooseSuspects[i].addEventListener('click', (e) => {
 			if (e.target.id === 'mustard') {
 				suspectGuess.innerHTML = 'Mr. Mustard killed Mr. Boddy ...'
@@ -87,65 +85,80 @@ function playGame () {
 	}
 
 	//choose rooms
-	for (i=0; i<chooseSuspects.length; i++) {
-		console.log(chooseSuspects[i].id)
-		chooseSuspects[i].addEventListener('click', (e) => {
-			if (e.target.id === 'mustard') {
-				suspectGuess.innerHTML = 'Mr. Mustard killed Mr. Boddy ...'
+	for (j=0; j<chooseRooms.length; j++) {
+		chooseRooms[j].addEventListener('click', (e) => {
+			if (e.target.id === 'kitchen') {
+				roomGuess.innerHTML = 'in the Kitchen'
 			}
-			else if (e.target.id ==='peacock') {
-				suspectGuess.innerHTML = 'Mrs. Peacock killed Mr. Boddy ...'
+			else if (e.target.id ==='ballroom') {
+				roomGuess.innerHTML = 'in the Ballroom'
 
 			}
-			else if (e.target.id ==='scarlett') {
-				suspectGuess.innerHTML = 'Miss Scarlett killed Mr. Boddy ...'
+			else if (e.target.id ==='conservatory') {
+				roomGuess.innerHTML = 'in the Conservatory'
 
 			}
-			else if (e.target.id ==='green') {
-				suspectGuess.innerHTML = 'Mr. Green killed Mr. Boddy ...'
+			else if (e.target.id ==='dining') {
+				roomGuess.innerHTML = 'in the Dining Room'
 
 			}
-			else if (e.target.id ==='white') {
-				suspectGuess.innerHTML = 'Mrs. White killed Mr. Boddy ...'
+			else if (e.target.id ==='billiards') {
+				roomGuess.innerHTML = 'in the Billiards Room'
 
 			}
-			else if (e.target.id ==='plum') {
-				suspectGuess.innerHTML = 'Professor Plum killed Mr. Boddy ...'
+			else if (e.target.id ==='library') {
+				roomGuess.innerHTML = 'in the Library'
+
 			}
-			suspectBox.style.backgroundColor = 'yellow'
-			suspectBox.style.color = 'black'
+			else if (e.target.id ==='lounge') {
+				roomGuess.innerHTML = 'in the Lounge'
+
+			}
+			else if (e.target.id ==='hall') {
+				roomGuess.innerHTML = 'in the Hall'
+
+			}
+			else if (e.target.id ==='study') {
+				roomGuess.innerHTML = 'in the Study'
+
+			}
+			roomBox.style.backgroundColor = 'yellow'
+			roomBox.style.color = 'black'
 		})
 	}
-	["dagger", "candlestick", "lead_pipe", "revolver", "rope", "wrench"]
+
 // Weapons listener
-	for (j=0; j<chooseSuspects.length; j++) {
-		console.log(chooseSuspects[j].id)
-		chooseSuspects[j].addEventListener('click', (e) => {
+	for (k=0; k<chooseWeapons.length; k++) {
+		chooseWeapons[k].addEventListener('click', (e) => {
 			if (e.target.id === 'dagger') {
-				suspectGuess.innerHTML = 'Mr. Mustard killed Mr. Boddy ...'
+				weaponGuess.innerHTML = '... with a dagger'
 			}
 			else if (e.target.id ==='candlestick') {
-				suspectGuess.innerHTML = 'Mrs. Peacock killed Mr. Boddy ...'
+				weaponGuess.innerHTML = '... with a candlestick'
 
 			}
 			else if (e.target.id ==='lead_pipe') {
-				suspectGuess.innerHTML = 'Miss Scarlett killed Mr. Boddy ...'
+				weaponGuess.innerHTML = '...with a lead pipe'
 
 			}
 			else if (e.target.id ==='revolver') {
-				suspectGuess.innerHTML = 'Mr. Green killed Mr. Boddy ...'
+				weaponGuess.innerHTML = '...with a revolver'
 
 			}
 			else if (e.target.id ==='rope') {
-				suspectGuess.innerHTML = 'Mrs. White killed Mr. Boddy ...'
+				weaponGuess.innerHTML = '... with a rope'
 
 			}
 			else if (e.target.id ==='wrench') {
-				suspectGuess.innerHTML = 'Professor Plum killed Mr. Boddy ...'
+				weaponGuess.innerHTML = '...with a wrench'
 			}
-			suspectBox.style.backgroundColor = 'yellow'
-			suspectBox.style.color = 'black'
+			weaponBox.style.backgroundColor = 'yellow'
+			weaponBox.style.color = 'black'
 		})
+	}
+
+	if (weaponBox.style.backgroundColor === 'yellow' && roomBox.style.backgroundColor === 'yellow' && suspectBox.style.backgroundColor === 'yellow') {
+		console.log('submit suggestion')
 	}
 }
 
