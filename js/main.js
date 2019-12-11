@@ -60,6 +60,7 @@ function playNewGame() {
 	solveArr = []
 	triesLeft = 10
 	counter.innerText = `TRIES LEFT: 10`
+	counter.style.backgroundColor = 'yellow'
 	resetMessage()
 	resetSuggestions()
 	document.getElementById('murder').style.visibility = 'visible'
@@ -133,6 +134,7 @@ function newGuess ()  {
 	withGuess = ''
 	guessArr = []
 	resetSuggestions()
+	makeSuggestions()
 }
 
 function resetSuggestions () {
@@ -303,4 +305,3 @@ function makeSuggestions () {
 	}
 	return whoGuess, whereGuess, withGuess
 }
-
