@@ -1,2 +1,27 @@
-Get A Clue -- a murder mystery based on vanilla Javascript, HTML and CSS
+Get A Clue -- a murder mystery based on vanilla Javascript, HTML and CSS.
 
+***************************************************
+HOW TO PLAY 
+
+Click on the PLAY GAME button to start a game. 
+
+You have 10 chances to guess who killed Mr. Boddy. 
+
+Click on the images to fill the guess boxes.
+
+When you have all three guess boxes filled, check your guesses to see if you have solved the mystery.
+
+If you don't solve the mystery, the game will provide you with one random clue.  Be sure to keep track of your clues so you can solve the murder before your chances run out!
+
+*****************************************************
+DEVELOPMENT PROCESS
+
+After discarding my original game project/design, I settled on creating a Clue-inspired game.
+
+The first steps I took involved setting up the HTML elements and styling the content.
+
+I then moved on to the JavaScript code, using console logging along the way to check if my code was running correctly.  One of the stumbling blocks I had involved adding and removing event listeners. I googled the problem, read some question and answer entries on StackOverflow and read the MDN documentation. After several failed attempts, I was finally able to figure out how to handle these and my coding went somewhat smoother after that.
+
+Because much of my game required interacting and changing the DOM elements, I set up quite a few variables in my JS file.  After getting most of the way through coding, I realized that a better technique might involve simply adding or modifying the styling classes for the various elements rather than trying to modify the styling attributes individually via JavaScript. I'll revisit this code at some point to see if that might work.
+
+After the bulk of the game functionality was programmed, I took some time to work out the bugs by playing through the different scenarios such as running out of turns, winning, and getting hints. While I had been testing as I went along, I found that there were some bugs that were overlooked when the overall flow of the game was tested.
