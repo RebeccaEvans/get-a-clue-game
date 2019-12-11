@@ -10,9 +10,19 @@
 <body>
 
 		<div class="header">
-			<p id='clue-game'>GET A CLUE</p>
-			<p id='typewriter'>- a game of murder and mystery -</p>
-			<button id='start-game'>PLAY GAME</button>
+			<div id='clue-game'>GET A CLUE</div>
+			<div id='typewriter'>- a game of murder and mystery -</div>
+			<div class='status-wrapper'>
+				<button id='start-game'>PLAY GAME</button>
+				<div id="counter">
+					<div>TRIES LEFT:</div>
+					<div id='countdown'>10</div>
+				</div>
+				<div id="notify">
+					<div id='message'>You may make up to 10 suggestions. After each suggestion, the game will give you one clue to solve the myster of Mr. Boddy's murder.  Keep track of the clues and solve the mystery before your tries run out!</div>
+				</div>
+			</div>
+			
 		</div>
 		<div class="clues-container">
 			<div id="title-weapons">WEAPONS</div>
@@ -68,13 +78,7 @@
 		</div>
 		<div class="player-space">
 			<div>
-				<p>WHO KILLED MR. BODDY?</p>
-				<p>You may make up to 10 suggestions. After each suggestion, the game will give you one clue to solve the myster of Mr. Boddy's murder. Keep track of the clues and solve the mystery before time runs out! </p>
-			</div>
-
-			<div id="counter">
-				<div>TRIES LEFT:</div>
-				<div id='countdown'>10</div>
+				<p>Click on the pictures to fill your guess boxes.</p>
 			</div>
 			<div class="suggestion">
 				<div id="suspect-guess"><div id='who'>suspect guess</div></div>
@@ -82,7 +86,7 @@
 				<div id="weapon-guess"><div id='with'>weapon guess</div></div>
 			</div>
 			<div class="submit-suggestion">
-				<button id='submit' type='button'>CHECK SUGGESTION</button>
+				<button id='submit'>CHECK SUGGESTION</button>
 			</div>
 		</div>
 
